@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     Button button;
+    EditText txtValor;
+
 
     /*Desde donde
      * MainActivity.this
@@ -20,13 +23,18 @@ public class MainActivity extends AppCompatActivity {
      * Al lugar de destino
      * SecondActivity.class*/
     public void goToSecondActivity(View view) {
+        String valor = txtValor.getText().toString();
         Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+        intent.putExtra("VALOR",valor);
         startActivity(intent);
+
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        txtValor = findViewById(R.id.txtValor);
         Toast.makeText(this, "onCreate ".concat(MainActivity.class.getName()), Toast.LENGTH_LONG).show();
         Log.d("->","onCreate()");
     }

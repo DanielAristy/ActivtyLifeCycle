@@ -4,14 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
+
+    TextView txtDestino;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        txtDestino = findViewById(R.id.txtDestino);
+        String valor = getIntent().getStringExtra("VALOR");
+        txtDestino.setText(valor);
+
         Toast.makeText(this, "onCreate ".concat(SecondActivity.class.getName()), Toast.LENGTH_LONG).show();
         Log.d("->","onCreate()");
     }

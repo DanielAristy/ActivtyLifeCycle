@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Activty ife cycle</string>
     <string name="ir_a_actividad_siguiente">IR A ACTIVIDAD SIGUIENTE</string>
+    <string name="ingrese_un_valor">Ingrese un valor</string>
 </resources>
